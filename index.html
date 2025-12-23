@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LifeDrop | Blood Donation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  scroll-behavior:smooth;
+  background:#f7f7f7;
+}
+
+/* HEADER */
+header{
+  background:#b30000;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  color:#fff;
+  font-size:28px;
+  font-weight:bold;
+}
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{text-decoration:underline}
+
+/* HERO */
+.hero{
+  background:url('https://images.unsplash.com/photo-1579154204601-01588f351e67') center/cover no-repeat;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-box{
+  background:rgba(0,0,0,0.65);
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+.hero-box h1{font-size:42px}
+
+/* BUTTON */
+.btn{
+  background:#b30000;
+  color:white;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+}
+.btn:hover{background:#800000}
+
+/* SECTIONS */
+section{padding:60px 20px}
+h2{text-align:center;color:#b30000;font-size:34px}
+.sub{text-align:center;color:#555;margin-bottom:30px}
+
+/* CARD */
+.card{
+  background:#fff;
+  max-width:1000px;
+  margin:25px auto;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+/* FORM */
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th,td{
+  border:1px solid #ccc;
+  padding:10px;
+  text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+/* ===============================
+   CAMPAIGN GRID (SIDE BY SIDE)
+================================ */
+.campaign-grid{
+  max-width:1100px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+}
+
+.campaign-card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.campaign-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover; /* ✅ same size, professional fit */
+  display:block;
+}
+
+.campaign-card p{
+  padding:15px;
+  text-align:center;
+  font-weight:bold;
+  color:#b30000;
+}
+
+/* Hover animation */
+.campaign-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .campaign-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .campaign-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="logo">LifeDrop</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#eligibility">Eligibility</a>
+<a href="#groups">Blood Groups</a>
+<a href="#find">Find Donor</a>
+<a href="#request">Request</a>
+<a href="#campaigns">Campaigns</a>
+<a href="#success">Success</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+<div class="hero-box" data-aos="zoom-in">
+<h1>Donate Blood, Save Lives</h1>
+<p>One donation can save three lives</p>
+<a href="#donate"><button class="btn">Donate Now</button></a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About LifeDrop</h2>
+<div class="card" data-aos="fade-right">
+<img src=photos/01.jpg>
+<p>LifeDrop connects blood donors with patients in emergency situations.</p>
+</div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section id="eligibility">
+<h2>Donor Eligibility</h2>
+<div class="card" data-aos="fade-left">
+<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3">
+<ul>
+<li>Age: 18 – 60 years</li>
+<li>Weight: Minimum 50 kg</li>
+<li>Healthy person</li>
+<li>No serious disease</li>
+</ul>
+</div>
+</section>
+
+<!-- BLOOD GROUPS -->
+<section id="groups">
+<h2>Blood Groups</h2>
+<div class="card" data-aos="zoom-in">
+<table>
+<tr><th>Blood Group</th><th>Can Donate To</th></tr>
+<tr><td>O+</td><td>All Positive</td></tr>
+<tr><td>A+</td><td>A+, AB+</td></tr>
+<tr><td>B+</td><td>B+, AB+</td></tr>
+<tr><td>AB+</td><td>AB+</td></tr>
+</table>
+</div>
+</section>
+
+<!-- FIND DONOR -->
+<section id="find">
+<h2>Find Donor</h2>
+
+<div class="card" data-aos="fade-up">
+  
+  <select id="bloodGroup">
+    <option value="">Select Blood Group</option>
+    <option>A+</option>
+    <option>B+</option>
+    <option>O+</option>
+  </select>
+
+  <select id="city">
+    <option value="">Select City</option>
+    <option>Lahore</option>
+    <option>Karachi</option>
+    <option>Islamabad</option>
+  </select>
+
+  <button class="btn" onclick="findDonor()">Search</button>
+
+  <!-- OUTPUT -->
+  <div id="donorResult" style="margin-top:20px;"></div>
+
+</div>
+</section>
+
+
+<!-- REQUEST BLOOD -->
+<!-- REQUEST BLOOD -->
+<section id="request">
+<h2>Request Blood</h2>
+
+<div class="card" data-aos="fade-up">
+
+<form id="bloodRequestForm">
+
+  <input type="text" name="patient_name" placeholder="Patient Name" required>
+
+  <select name="blood_group" required>
+    <option value="">Select Blood Group</option>
+    <option>A+</option>
+    <option>B+</option>
+    <option>O+</option>
+    <option>AB+</option>
+  </select>
+
+  <input type="text" name="hospital" placeholder="Hospital Name" required>
+
+  <input type="text" name="city" placeholder="City" required>
+
+  <input type="tel" name="contact" placeholder="Contact Number" required>
+
+  <textarea name="message" placeholder="Additional Details"></textarea>
+
+  <button class="btn" type="submit">Submit Request</button>
+
+</form>
+
+<p id="requestStatus"></p>
+
+</div>
+</section>
+
+
+
+<!-- CAMPAIGNS -->
+<section id="campaigns">
+  <h2>Blood Campaigns</h2>
+
+  <div class="campaign-grid" data-aos="fade-up">
+    
+    <div class="campaign-card">
+      <img src="photos/04.jpeg" alt="Islamabad Blood Camp">
+      <p>Islamabad Blood Donation Camp</p>
+    </div>
+
+    <div class="campaign-card">
+      <img src="photos/05.jpeg" alt="Islamabad ">
+      <p>Islamabad Blood Donation Camp</p>
+    </div>
+
+    <div class="campaign-card">
+      <img src="photos/05.jpg" alt="Karachi Blood Camp">
+      <p>Karachi Blood Donation Camp</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SUCCESS -->
+<section id="success">
+<h2>Success Stories</h2>
+<div class="card" data-aos="fade-left">
+<img src=photos/02.jpg>
+<p>Thousands of lives saved through LifeDrop donors.</p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2>FAQs</h2>
+<div class="card" data-aos="zoom-in">
+<p><b>Is blood donation safe?</b> Yes</p>
+<p><b>How often can I donate?</b> Every 3 months</p>
+</div>
+</section>
+
+<!-- DONATE FORM -->
+<section id="donate">
+<h2>Become a Donor</h2>
+<div class="card" data-aos="fade-up">
+<input placeholder="Full Name">
+<input placeholder="Email">
+<input placeholder="Phone">
+<select>
+<option>Select Blood Group</option>
+<option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+<option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+</select>
+<textarea placeholder="Message"></textarea>
+<button class="btn">Submit</button>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="card" data-aos="fade-up">
+<input placeholder="Your Name">
+<input placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button class="btn">Send</button>
+
+<iframe src="https://www.google.com/maps?q=lahore&output=embed"
+width="100%" height="220"></iframe>
+
+<p>📞 +92 300 1234567</p>
+<p>📧 lifedrop@gmail.com</p>
+</div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/923001234567">💬</a>
+
+<footer>
+<p>© 2025 LifeDrop Blood Donation</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:1000,once:true});</script>
+<script>
+function findDonor(){
+  const blood = document.getElementById("bloodGroup").value;
+  const city = document.getElementById("city").value;
+  const result = document.getElementById("donorResult");
+
+  if(blood === "" || city === ""){
+    result.innerHTML = "<p style='color:red;'>Please select both blood group and city.</p>";
+    return;
+  }
+
+  /* Example donor data */
+  const donors = [
+    {name:"Ali Khan", blood:"A+", city:"Lahore", phone:"0301-1111111"},
+    {name:"Ahmed Raza", blood:"B+", city:"Karachi", phone:"0302-2222222"},
+    {name:"Sara Noor", blood:"O+", city:"Islamabad", phone:"0303-3333333"},
+    {name:"Usman Ali", blood:"A+", city:"Lahore", phone:"0304-4444444"}
+  ];
+
+  const matched = donors.filter(
+    d => d.blood === blood && d.city === city
+  );
+
+  if(matched.length === 0){
+    result.innerHTML = "<p style='color:red;'>No donor found for selected criteria.</p>";
+    return;
+  }
+
+  let output = `
+    <h3 style="color:#b30000;">Available Donors</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>City</th>
+        <th>Contact</th>
+      </tr>
+  `;
+
+  matched.forEach(donor=>{
+    output += `
+      <tr>
+        <td>${donor.name}</td>
+        <td>${donor.blood}</td>
+        <td>${donor.city}</td>
+        <td>${donor.phone}</td>
+      </tr>
+    `;
+  });
+
+  output += "</table>";
+  result.innerHTML = output;
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init(1pEFMS6PeMrUu244Z); 
+})();
+
+document.getElementById("bloodRequestForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.sendForm(
+   "service_6k2uk6f",
+    "template_6a27ul3",
+    this
+  ).then(
+    function(){
+      document.getElementById("requestStatus").innerHTML =
+        "<span style='color:green;'>Request sent successfully!</span>";
+      document.getElementById("bloodRequestForm").reset();
+    },
+    function(error){
+      document.getElementById("requestStatus").innerHTML =
+        "<span style='color:red;'>Failed to send request. Try again.</span>";
+    }
+  );
+});
+</script>
+
+</body>
+</html>
